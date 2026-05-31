@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista zadań</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="authSection" class="auth-panel">
+      <h1>Lista zadań</h1>
+
+      <form id="authForm" class="auth-form">
+        <h2 id="authTitle">Zaloguj się</h2>
+        <label for="username">Nazwa użytkownika</label>
+        <input id="username" type="text" autocomplete="username" required minlength="3">
+
+        <label for="password">Hasło</label>
+        <input id="password" type="password" autocomplete="current-password" required minlength="4">
+
+        <button id="authSubmitBtn" type="submit">Zaloguj</button>
+        <p id="authMessage" class="auth-message" role="alert"></p>
+      </form>
+
+      <p id="authModeHint">Nie masz konta?</p>
+      <button id="authToggleBtn" class="secondary-btn" type="button">Utwórz konto</button>
+    </section>
+
+    <section id="todoSection" class="todo-panel" hidden>
+      <header class="app-header">
+        <div>
+          <h1>Lista zadań</h1>
+          <p>Zalogowano jako <strong id="currentUserName"></strong></p>
+        </div>
+        <button id="logoutBtn" class="secondary-btn" type="button">Wyloguj</button>
+      </header>
+
+      <form id="taskForm">
+        <input id="taskInput" type="text" placeholder="Wpisz zadanie" required>
+        <select id="priority">
+          <option value="low">Niski priorytet</option>
+          <option value="medium">Średni priorytet</option>
+          <option value="high">Wysoki priorytet</option>
+        </select>
+        <button type="submit">Dodaj</button>
+      </form>
+
+      <section class="ai-panel" aria-labelledby="aiTitle">
+        <h2 id="aiTitle">AI</h2>
+        <div class="ai-actions">
+          <button id="generateAiTasksBtn" type="button">Wygeneruj zadania</button>
+          <button id="summarizeAiTasksBtn" type="button">Podsumuj zadania</button>
+        </div>
+        <p id="aiMessage" class="ai-message" role="status"></p>
+      </section>
+
+      <ul id="taskList"></ul>
+
+      <p id="summary">Liczba zadań: 0</p>
+
+      <button id="clearAllBtn" type="button">Wyczyść wszystkie zadania</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

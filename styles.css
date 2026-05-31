@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.app-shell {
+  width: 100%;
+}
+
+.auth-panel,
+.todo-panel {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.auth-form label {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+#taskForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input {
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+  background: #265f8f;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #1f4d73;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.secondary-btn {
+  background: #555;
+}
+
+.secondary-btn:hover {
+  background: #333;
+}
+
+.auth-message {
+  min-height: 20px;
+  margin: 4px 0 0;
+  color: #b00020;
+  font-weight: bold;
+}
+
+.auth-message.success {
+  color: seagreen;
+}
+
+.ai-panel {
+  border: 1px solid #d7d7d7;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 14px;
+}
+
+.ai-panel h2 {
+  font-size: 18px;
+}
+
+.ai-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ai-message {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: #b00020;
+  overflow-wrap: anywhere;
+}
+
+.ai-message.success {
+  color: #1e6b3c;
+}
+
+#authModeHint {
+  margin: 0 0 8px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.app-header p {
+  margin: 0;
+  color: #555;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fdfdfd;
+  margin-bottom: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-left: 6px solid #999;
+  border-radius: 4px;
+}
+
+li span {
+  overflow-wrap: anywhere;
+}
+
+.high {
+  border-left-color: tomato;
+}
+
+.medium {
+  border-left-color: orange;
+}
+
+.low {
+  border-left-color: seagreen;
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+.task-actions button {
+  margin-left: 5px;
+}
+
+#summary {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#clearAllBtn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#clearAllBtn:hover {
+  background-color: #c0392b;
+}
+
+#clearAllBtn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 520px) {
+  body {
+    margin: 0;
+    padding: 12px;
+  }
+
+  .auth-panel,
+  .todo-panel {
+    padding: 18px;
+  }
+
+  .app-header,
+  #taskForm,
+  .ai-actions,
+  li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .task-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .task-actions button {
+    flex: 1;
+    margin-left: 0;
+  }
+}
