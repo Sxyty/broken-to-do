@@ -24,6 +24,19 @@ npm start
 http://127.0.0.1:3000
 ```
 
+## Vercel
+
+Aplikacja jest statyczna, a endpointy AI dzialaja jako Vercel Functions w katalogu `api/`.
+
+W ustawieniach projektu Vercel dodaj zmienne srodowiskowe:
+
+```text
+OPENAI_API_KEY
+OPENAI_MODEL
+```
+
+`OPENAI_MODEL` jest opcjonalne. Bez tej zmiennej aplikacja uzyje `gpt-5-mini`.
+
 ## Bezpieczenstwo
 
 Plik `.env` jest ignorowany przez Git i nie powinien trafic do repozytorium. Jezeli klucz API zostal kiedykolwiek publicznie ujawniony, uniewaznij go w panelu OpenAI i wygeneruj nowy.
