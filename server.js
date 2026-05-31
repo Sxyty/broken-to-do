@@ -5,9 +5,10 @@ const { generateTasks, summarizeTasks } = require("./lib/ai");
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || "127.0.0.1";
-const ROOT = __dirname;
+const PROJECT_ROOT = __dirname;
+const PUBLIC_ROOT = path.join(PROJECT_ROOT, "public");
 
-loadDotEnv(path.join(ROOT, ".env"));
+loadDotEnv(path.join(PROJECT_ROOT, ".env"));
 
 const server = http.createServer(async (req, res) => {
   try {
@@ -111,9 +112,9 @@ function readJsonBody(req) {
 
 async function serveStatic(pathname, res) {
   const safePath = pathname === "/" ? "/index.html" : pathname;
-  const filePath = path.normalize(path.join(ROOT, safePath));
+  const filePath = path.normalize(path.join(PUBLIC_ROOT, safePath));
 
-  if (!filePath.startsWith(ROOT)) {
+  if (!filePath.startsWith(PUBLIC_ROOT)) {
     sendJson(res, 403, { error: "Brak dostepu." });
     return;
   }

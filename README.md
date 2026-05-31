@@ -26,7 +26,7 @@ http://127.0.0.1:3000
 
 ## Vercel
 
-Aplikacja jest statyczna, a endpointy AI dzialaja jako Vercel Functions w katalogu `api/`.
+Aplikacja jest statyczna, pliki frontendowe sa w katalogu `public/`, a endpointy AI dzialaja jako Vercel Functions w katalogu `api/`.
 
 W ustawieniach projektu Vercel dodaj zmienne srodowiskowe:
 
